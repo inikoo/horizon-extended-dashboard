@@ -8,7 +8,7 @@ use VincentBean\HorizonDashboard\Http\Controllers\ExceptionController;
 use VincentBean\HorizonDashboard\Http\Controllers\JobController;
 use VincentBean\HorizonDashboard\Http\Controllers\StatisticsController;
 
-Route::middleware('horizon')->prefix(config('horizon-dashboard.prefix'))->group(function () {
+Route::middleware(['horizon','auth'])->prefix(config('horizon-dashboard.prefix'))->group(function () {
 
     Route::get('/', DashboardController::class)
         ->name('horizon-dashboard');
